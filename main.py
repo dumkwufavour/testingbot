@@ -8,6 +8,10 @@ import os
 intents = discord.Intents.all()
 intents.messages = True
 
+load_dotenv()
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 # Create an instance of the bot
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -23,4 +27,4 @@ async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
 
 # Run the bot with your token
-bot.run('MTE4MTMzMzAzNDUwNzcxNDYwMQ.GGvOCM.NvH-H8Oifr3KmTy1XSlk_uS9aIBMbDNg5sml-0')
+bot.run(BOT_TOKEN)
